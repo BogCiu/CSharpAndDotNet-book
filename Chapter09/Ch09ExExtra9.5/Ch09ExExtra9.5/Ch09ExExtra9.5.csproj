@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net5.0</TargetFramework>
+    <RootNamespace>Ch09ExExtra9._5</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="Vehicles">
+      <HintPath>..\..\Ch09ExExtra9.4\Vehicles\Vehicles\bin\Debug\net5.0\Vehicles.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>
