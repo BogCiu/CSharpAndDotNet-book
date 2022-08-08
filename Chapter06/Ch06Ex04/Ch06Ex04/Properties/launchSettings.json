@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Ch06Ex04": {
+      "commandName": "Project",
+      "commandLineArgs": "256 myfile.txt \"a longer argument\""
+    }
+  }
+}
