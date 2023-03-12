@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using static System.Math;
 
-namespace Ch12Ex01
+namespace Ch12Ex03
 {
     public class Vector
     {
@@ -55,12 +55,6 @@ namespace Ch12Ex01
             string thetaString = Theta.HasValue?Theta.ToString() : "null";
             // Return (r, theta) string.
             return string.Format($"({rString}, {thetaString})");
-        }
-
-        //Ch12ExExtra12.2
-        public static double? operator *(Vector op1, Vector op2)
-        {
-            return op1.R.Value * op2.R.Value * Cos((double)(op1.ThetaRadians.Value - op2.ThetaRadians.Value));
         }
     }
 }

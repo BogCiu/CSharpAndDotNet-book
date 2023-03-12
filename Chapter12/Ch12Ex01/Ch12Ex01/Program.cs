@@ -10,6 +10,7 @@ namespace Ch12Ex01
             Vector v2 = GetVector("vector2");
             Console.WriteLine($"{v1} + {v2} = {v1 + v2}");
             Console.WriteLine($"{v1} - {v2} = {v1 - v2}");
+            Console.WriteLine($"{v1} * {v2} = {v1 * v2}");
             Console.ReadKey();
         }
         static Vector GetVector(string name)
