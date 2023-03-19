@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Ch13Ex03
 {
-    public class MessageArrivedEventArgs
+    public class MessageArrivedEventArgs : EventArgs
     {
         private string message;
         public string Message { get { return message; } }

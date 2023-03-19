@@ -162,7 +162,8 @@ namespace Ch13CardClient
                     // Space out text for players
                     Console.WriteLine();
                     // Check to see if player has won the game, and exit the player loop if so.
-                    GameWon = players[currentPlayer].HasWon();
+                    GameWon = players[currentPlayer].HasWonRummy();
+                    // GameWon = players[currentPlayer].HasWon();
                     if (GameWon == true)
                         break;
                 }
