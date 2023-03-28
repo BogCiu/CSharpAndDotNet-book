@@ -21,11 +21,58 @@ namespace LoopThroughXmlDocument
     /// </summary>
     public partial class MainWindow : Window
     {
-        //private const string booksFile = @"C:\Voicu Workfolder\Leisure\Projects\CSharpBook\CSharpAndDotNet-book\Chapter15\XML and Schemas\GhostStories.xml";
-        private const string booksFile = @"C:\Voicu Workfolder\Leisure\Projects\CSharpBook\CSharpAndDotNet-book\Chapter15\XML and Schemas\Books.xml";
+        //private const string booksFile = @"D:\Workspace\C#\BeginingCSharpAndDotNET\Chapter15\XML and Schemas\GhostStories.xml";
+        private const string booksFile = @"D:\Workspace\C#\BeginingCSharpAndDotNET\Chapter15\XML and Schemas\Books.xml";
         public MainWindow()
         {
             InitializeComponent();
+        }
+        private void buttonDeleteNode_Click(object sender, RoutedEventArgs e)
+        {
+            // Load the XML document.
+            XmlDocument document = new XmlDocument();
+            document.Load(booksFile);
+            // Get the root element
+            XmlElement root = document.DocumentElement;
+            // Find the node. root is the <books> tag, find its last child which will be the last <book> node.
+            if (root.HasChildNodes)
+            {
+                XmlNode book = root.LastChild;
+                // Delete the child.
+                root.RemoveChild(book);
+                // Save the document back to disk.
+                document.Save(booksFile);
+            }
+        }
+        private void buttonCreateNode_Click(object sender, RoutedEventArgs e)
+        {
+            // Load the XML document.
+            XmlDocument document = new XmlDocument();
+            document.Load(booksFile);
+            // Get the root element.
+            XmlElement root = document.DocumentElement;
+            // Create the new nodes.
+            XmlElement newBook = document.CreateElement("book");
+            XmlElement newTitle = document.CreateElement("title");
+            XmlElement newAuthor = document.CreateElement("author");
+            XmlElement newCode = document.CreateElement("code");
+            XmlText title = document.CreateTextNode("Professional C# 7 and .Net Core");
+            XmlText author = document.CreateTextNode("Christian Nagel");
+            XmlText code = document.CreateTextNode("978-1119449270");
+            XmlComment comment = document.CreateComment("the Professional edition");
+            XmlAttribute newPages = document.CreateAttribute("pages");
+            newPages.Value = "1000+";
+            // Insert the elements.
+            newBook.AppendChild(comment);
+            newBook.AppendChild(newTitle);
+            newBook.AppendChild(newAuthor);
+            newBook.AppendChild(newCode);
+            newBook.Attributes.Append(newPages);
+            newTitle.AppendChild(title);
+            newAuthor.AppendChild(author);
+            newCode.AppendChild(code);
+            root.InsertAfter(newBook, root.LastChild);
+            document.Save(booksFile);
         }
 
         private void buttonLoop_Click(object sender, RoutedEventArgs e)

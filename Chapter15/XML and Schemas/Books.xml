@@ -1,18 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <books>
-	<book>
-		<title>Beginning C# and .NET</title>
-		<author>Benjamin Perkins and Jon Reid</author>
-		<code>978-1119795780</code>
-	</book>
-	<book>
-		<title>Beginning XML</title>
-		<author> Joe Fawcett et al </author>
-		<code>978-1118162132</code>
-	</book>
-	<book>
-		<title> Professional C# 7 and .NET Core =</title>
-		<author>Christian Nagel</author>
-		<code>978-1119449270</code>
-	</book>	
+  <book>
+    <title>Beginning C# and .NET</title>
+    <author>Benjamin Perkins and Jon Reid</author>
+    <code>978-1119795780</code>
+  </book>
+  <book>
+    <title>Beginning XML</title>
+    <author> Joe Fawcett et al </author>
+    <code>978-1118162132</code>
+  </book>
+  <book pages="1000+">
+    <!--the Professional edition-->
+    <title>Professional C# 7 and .Net Core</title>
+    <author>Christian Nagel</author>
+    <code>978-1119449270</code>
+  </book>
 </books>
