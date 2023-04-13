@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+	  <Version>2.0.0</Version>
+	  <PackageId>Ch18CardLibStandard</PackageId>
+	  <Authors>Voicu Bogdan</Authors>
+	  <Description>Beginning C# and .NET Standard CardLib</Description>
+	  <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+	  <PackageReleaseNotes>
+		  Beginning C# and .NET Standard CardLib for completing the Chapter 18 exercises
+	  </PackageReleaseNotes>
+	  <Copyright>No >:(</Copyright>
+	  <PackageTags>Beginning C# and .Net, CardLib</PackageTags>
+  </PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+		<DocumentationFile>
+			C:\BeginningCSharpAndDotNET\Chapter18\Ch18CardLibStandard\Ch18CardLibStandard\Ch18CardLibStandard.xml
+		</DocumentationFile>
+	</PropertyGroup>
+
+</Project>
