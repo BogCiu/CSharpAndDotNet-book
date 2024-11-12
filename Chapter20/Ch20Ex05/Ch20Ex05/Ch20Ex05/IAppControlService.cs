@@ -12,6 +12,6 @@ namespace Ch20Ex05
     public interface IAppControlService
     {
         [OperationContract]
-        void DoWork();
+        void SetRadius(int radius, string foreTo, int seconds);
     }
 }
