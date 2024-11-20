@@ -2,18 +2,32 @@
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>net5.0-windows</TargetFramework>
+    <TargetFramework>net8.0-windows</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Banner.png" />
+	  <None Remove="Banner.png" />
+	  <None Remove="base_floppydisk_32.png" />
+	  <None Remove="Clubs.png" />
+	  <None Remove="Diamonds.png" />
+	  <None Remove="Hearts.png" />
+	  <None Remove="Spades.png" />
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="Banner.png" />
+    <ProjectReference Include="..\..\..\Chapter13\Ch13CardLib\Ch13CardLib\Ch13CardLib.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+	  <Resource Include="Banner.png" />
+	  <Resource Include="base_floppydisk_32.png" />
+	  <Resource Include="Clubs.png" />
+	  <Resource Include="Diamonds.png" />
+	  <Resource Include="Hearts.png" />
+	  <Resource Include="Spades.png" />
   </ItemGroup>
 
 </Project>

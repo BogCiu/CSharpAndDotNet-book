@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Xml.Serialization;
 using System.IO;
+using Ch13CardLib;
 
 namespace BenCards.WPF
 {
@@ -24,21 +25,24 @@ namespace BenCards.WPF
         private GameOptions gameOptions;
         public OptionsWindow()
         {
-            if (gameOptions == null)
-            {
-                if (File.Exists("GameOptions.xml"))
-                {
-                    using (var stream = File.OpenRead("GameOptions.xml"))
-                    {
-                        var serializer = new XmlSerializer(typeof(GameOptions));
-                        gameOptions = serializer.Deserialize(stream) as GameOptions;
-                    }
-                }
-                else
-                {
-                    gameOptions = new GameOptions();
-                }
-            }
+            gameOptions = GameOptions.Create();
+            DataContext = gameOptions;
+            //if (gameOptions == null)
+            //{
+            //    if (File.Exists("GameOptions.xml"))
+            //    {
+            //        using (var stream = File.OpenRead("GameOptions.xml"))
+            //        {
+            //            var serializer = new XmlSerializer(typeof(GameOptions));
+            //            gameOptions = serializer.Deserialize(stream) as GameOptions;
+            //        }
+            //    }
+            //    else
+            //    {
+            //        gameOptions = new GameOptions();
+            //    }
+            //}
+            //DataContext = gameOptions;
             InitializeComponent();
         }
 
@@ -60,11 +64,8 @@ namespace BenCards.WPF
 
         private void oKButton_Click(object sender, RoutedEventArgs e)
         {
-            using (var stream = File.Open("GameOptions.xml", FileMode.Create))
-            {
-                var serializer = new XmlSerializer(typeof(GameOptions));
-                serializer.Serialize(stream, gameOptions);
-            }
+            DialogResult = true;
+            gameOptions.Save();
             Close();
         }
 
