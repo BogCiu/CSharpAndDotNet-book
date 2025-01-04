@@ -222,3 +222,7 @@ project.lock.json
 #####
 # End of core ignore list, below put you custom 'per project' settings (patterns or path)
 #####
+
+
+# Ignore Access and secret key for Ch19 MinIO API utility
+/Chapter19/Ch19Ex01/Ch19Ex01/credentials.json
